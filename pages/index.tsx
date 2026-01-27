@@ -5,15 +5,23 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-      <Container>
-        <Stack flexDirection={"column"}>
-          <Box>Popular properties</Box>
-          <Box>Top Agents</Box>
-          <Box>Top Properties</Box>
-          <Box>Enets</Box>
+    <Stack>
+      <Stack flexDirection={"column"}>
+        <Stack>
+          <Stack className="container">Popular properties</Stack>
         </Stack>
-      </Container>
+        <Stack>
+          <Stack className="container">Top Agents</Stack>
+        </Stack>
+        <Stack>
+          <Stack className="container">Top Properties</Stack>
+        </Stack>
+        <Stack>
+          <Stack className="container">Enets</Stack>
+        </Stack>
+      </Stack>
+    </Stack>
   );
-}
+};
 
 export default withLayoutMain(Home);
