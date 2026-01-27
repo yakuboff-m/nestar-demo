@@ -3,10 +3,11 @@ import { Container, Stack } from "@mui/material";
 
 const PropertyList = () => {
   return (
-  <>
-    <Container>PROPERTY LIST</Container>
-  </>
+  <div style={{margin: "20px 0"}}>
+    <Stack className="container">Property List</Stack>
+  </div>
   );
 };
 
 export default withLayoutBasic(PropertyList);
+ 
