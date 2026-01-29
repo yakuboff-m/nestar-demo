@@ -1,0 +1,503 @@
+/** IMPORTS **/
+@import "/scss/variables.scss";
+@import "../../reset.scss";
+
+#pc-wrap {
+  #property-list-page {
+    padding-bottom: 40px;
+    background: #eeeeee;
+    .container {
+      .right {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+
+        span {
+          font-size: 14px;
+          color: #616161;
+        }
+
+        button {
+          margin-left: 10px;
+          color: #181a20;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: bold;
+          line-height: 26px;
+          text-transform: none;
+
+          &:hover {
+            background: none;
+          }
+        }
+      }
+      .property-page {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: flex-start;
+        .filter-config {
+          // Filter.scss
+
+          .filter-main {
+            width: 335px;
+            // height: 987px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          }
+
+          .find-your-home {
+            margin-bottom: 24px;
+
+            .title-main {
+              font-size: 20px;
+              font-weight: 600;
+              color: #181a20;
+              margin-bottom: 16px;
+            }
+
+            .title {
+              margin-bottom: 12px;
+              width: 100px;
+              height: 19px;
+              flex-direction: column;
+              justify-content: center;
+              color: var(--Color-Primary, #181a20);
+              font-family: Poppins;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 24px; /* 171.429% */
+            }
+
+            // Search input box
+            .input-box {
+              margin-right: 18px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              position: relative;
+
+              .search-input {
+                flex: 1;
+                border-radius: 8px;
+                background: #fff;
+                border: 1px solid #e0e0e0;
+
+                input {
+                  padding: 12px 40px 12px 44px;
+                  font-size: 14px;
+
+                  &::placeholder {
+                    color: var(--Color-Small-txt, #717171);
+
+                    /* 14/Regular */
+                    font-family: Poppins;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 26px; /* 185.714% */
+                  }
+                }
+
+                fieldset {
+                  border: none;
+                }
+              }
+
+              img {
+                position: absolute;
+                top: 13px;
+                left: 14px;
+                width: 20px;
+                height: 20px;
+                opacity: 0.5;
+              }
+
+              .search {
+                color: #181a20;
+              }
+            }
+          }
+
+          // Location & Property Type checkboxes
+          .property-location,
+          .find-your-home {
+            .input-box {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 4px;
+              margin-bottom: 8px;
+
+              .property-checkbox {
+                padding: 4px;
+
+                &.Mui-checked {
+                  color: #181a20;
+                }
+              }
+
+              label {
+                cursor: pointer;
+
+                .property-type,
+                .property_type,
+                .propert-type {
+                  font-size: 14px;
+                  color: #181a20;
+                }
+              }
+            }
+          }
+
+          // Rooms & Bedrooms button group
+          .button-group {
+            border-radius: 12px;
+            border: 1px solid var(--Color-Border, #ddd);
+            background: var(--Color-White, #fff);
+            display: flex;
+            flex-direction: row;
+
+            button {
+              flex: 1;
+              min-width: 48px;
+              padding: 10px 16px;
+              font-size: 14px;
+              font-weight: 500;
+              color: #181a20;
+              background: #fff;
+              text-transform: none;
+              transition: all 0.2s ease;
+
+              &:hover {
+                background: #f5f5f5;
+              }
+
+              // Active/selected state
+              &.active,
+              &.selected {
+                border: 2px solid #181a20 !important;
+                background: #fff;
+                font-weight: 600;
+              }
+
+              // First button
+              &:first-child {
+                border-radius: 12px 0 0 12px;
+                border: 2px solid var(--Color-Primary, #181a20);
+                background: var(--Color-White, #fff);
+              }
+
+              // Last button
+              &:last-child {
+                border-radius: 0 12px 12px 0;
+                border: 1px solid var(--Color-Border, #ddd);
+                background: var(--Color-White, #fff);
+              }
+            }
+          }
+
+          // Square meter & Price Range inputs
+          .square-year-input {
+            
+            display: flex;
+            flex-direction: row; // Make sure it's row, not column
+            align-items: center;
+            gap: 16px;
+
+            .MuiFormControl-root {
+              flex: 1;
+              min-width: 0; // Prevents flex items from overflowing
+
+              .MuiInputLabel-root {
+                font-size: 14px;
+                color: #9e9e9e;
+              }
+
+              .MuiOutlinedInput-root {
+                border-radius: 8px;
+                background: #f9f9f9; // Light gray background like the design
+              }
+            }
+
+            // Number inputs for price range
+            input[type="number"] {
+              flex: 1;
+              min-width: 0;
+              padding: 16px;
+              font-size: 16px;
+              border: 1px solid #e0e0e0;
+              border-radius: 8px;
+              background: #f9f9f9;
+              outline: none;
+
+              &:focus {
+                border-color: #181a20;
+              }
+
+              // Hide spinners
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+              }
+              //   -moz-appearance: textfield;
+            }
+
+            .central-divider {
+              width: 20px;
+              height: 2px;
+              background: #181a20;
+              flex-shrink: 0;
+            }
+          }
+        }
+        .main-config {
+          flex: 1;
+
+          .main-list-config {
+            .list-config {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 20px;
+            }
+          }
+
+          .pagination-config {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            gap: 16px;
+
+            .pagination-box {
+              .MuiPagination-root {
+                .MuiPaginationItem-root {
+                  &.Mui-selected {
+                    background: #eb6753;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+
+            .total-result {
+              .MuiTypography-root {
+                font-size: 14px;
+                color: #616161;
+              }
+            }
+          }
+
+          .card-config {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition:
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+            width: 296.01px;
+            height: 413px;
+            cursor: pointer;
+
+            &:hover {
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+              transform: translateY(-4px);
+            }
+
+            .top {
+              position: relative;
+              width: 376.012px;
+height: 246px;
+              overflow: hidden;
+
+              a {
+                display: block;
+                width: 100%;
+                height: 100%;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+              }
+
+              &:hover img {
+                transform: scale(1.05);
+              }
+
+              .top-badge {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: #eb6753;
+                color: #fff;
+                padding: 4px 10px;
+                border-radius: 6px;
+
+                img {
+                  width: 12px;
+                  height: 12px;
+                  object-fit: contain;
+                }
+
+                .MuiTypography-root {
+                  font-size: 11px;
+                  font-weight: 600;
+                  color: #fff;
+                }
+              }
+
+              .price-box {
+                position: absolute;
+                bottom: 12px;
+                left: 12px;
+                background: #fff;
+                padding: 6px 12px;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                .MuiTypography-root {
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: #181a20;
+                }
+              }
+            }
+
+            .bottom {
+              padding: 14px;
+              
+
+              .name-address {
+                margin-bottom: 10px;
+
+                .name {
+                  a {
+                    text-decoration: none;
+
+                    .MuiTypography-root {
+                      font-size: 15px;
+                      font-weight: 600;
+                      color: #181a20;
+
+                      &:hover {
+                        color: #1976d2;
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+
+                .address {
+                  margin-top: 4px;
+
+                  .MuiTypography-root {
+                    font-size: 12px;
+                    color: #9e9e9e;
+                  }
+                }
+              }
+
+              .options {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-bottom: 10px;
+
+                .option {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 4px;
+
+                  img {
+                    width: 16px;
+                    height: 16px;
+                    opacity: 0.7;
+                  }
+
+                  .MuiTypography-root {
+                    font-size: 12px;
+                    color: #616161;
+                  }
+                }
+              }
+
+              .divider {
+                width: 100%;
+                height: 1px;
+                background: #eeeeee;
+                margin: 10px 0;
+              }
+
+              .type-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .type {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 10px;
+
+                  .MuiTypography-root {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #bdbdbd;
+                    cursor: pointer;
+
+                    &:first-child {
+                      color: #181a20;
+                    }
+
+                    &:hover {
+                      color: #181a20;
+                    }
+                  }
+                }
+
+                .buttons {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 2px;
+
+                  .MuiIconButton-root {
+                    padding: 4px;
+
+                    svg {
+                      font-size: 16px;
+                      color: #bdbdbd;
+                    }
+                  }
+
+                  .view-cnt {
+                    font-size: 11px;
+                    color: #9e9e9e;
+                    margin-right: 6px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
