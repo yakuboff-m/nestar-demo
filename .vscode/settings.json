@@ -2,5 +2,25 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
   "editor.inlineSuggest.enabled": false,
-  "editor.tabCompletion": "off"
+  "editor.tabCompletion": "off",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.parameterHints.enabled": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.suggestSelection": "recentlyUsed",
+
+  // ✅ quality of life
+  "editor.acceptSuggestionOnEnter": "on",
+   // ✅ core suggestion popup
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.triggerSuggest": true,
 }

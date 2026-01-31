@@ -10,22 +10,46 @@ import Advertisement from "@/libs/components/homepage/Advertisement";
 import TopProperties from "@/libs/components/homepage/TopProperties";
 import TopAgents from "@/libs/components/homepage/TopAgents";
 import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
+import { useQuery } from "@apollo/client";
+import { GET_PROPERTIES } from "@/apollo/user/query";
 
 const Home: NextPage = () => {
   const device = useDeviceDetect();
 
-  if(device === "mobile"){
-    return (<Stack>HOMEPAGE MOBILE</Stack>);
+  const {
+    loading: getPropertiesLoading,
+    data: getPropertiesData,
+    error: getPropertiesError,
+    refetch: getPropertiesRefetch,
+  } = useQuery(GET_PROPERTIES, {
+    fetchPolicy: "network-only",
+    variables: {
+      input: {
+        page: 1,
+        limit: 3,
+        sort: "propertyRank",
+        direction: "DESC",
+        search: {
+          // memberId: "6958f93af65afb09fb22787f",
+          // typeList: "VILLA"
+        },
+      },
+    },
+  });
+  console.log({getPropertiesData});
+
+  if (device === "mobile") {
+    return <Stack>HOMEPAGE MOBILE</Stack>;
   } else {
     return (
-    <Stack className={"home-page"}>
-      <TrendProperties />
-      <PopularProperties />
-      <Advertisement />
-      <TopProperties />
-      <TopAgents />
-    </Stack>
-  );
+      <Stack className={"home-page"}>
+        <TrendProperties />
+        <PopularProperties />
+        <Advertisement />
+        <TopProperties />
+        <TopAgents />
+      </Stack>
+    );
   }
 };
 
