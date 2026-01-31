@@ -3,8 +3,18 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import useDeviceDetect from "../hooks/useDeviceDetect";
 
 const Footer = () => {
+    const device = useDeviceDetect();
+
+    if (device === "mobile") {
+      return(
+        <Stack className="footer-container">
+           FOOTER MOBILE
+        </Stack>
+      );
+    }
   return (
     <>
       <Stack className="main">

@@ -1,7 +1,22 @@
 import { Logout } from "@mui/icons-material";
 import { Box, Link, Menu, MenuItem, Stack } from "@mui/material";
+import useDeviceDetect from "../hooks/useDeviceDetect";
 
 const Top = () => {
+  const device = useDeviceDetect();
+
+  if (device === "mobile") {
+    return (
+      <Stack className="navbar">
+        <Link href={"/"}><div>Home</div></Link>
+        <Link href={"/property"}><div>Properties</div></Link>
+        <Link href={"/agent"}><div>Agents</div></Link>
+        <Link href={"/community"}><div>Community</div></Link>
+        <Link href={"/cs"}><div>CS</div></Link>
+      </Stack>
+    );
+  }
+
   return (
     <Stack className={"navbar"}>
       <Stack className={"navbar-main"}>
@@ -13,25 +28,11 @@ const Top = () => {
           </Box>
 
           <Box component={"div"} className={"router-box"}>
-            <Link href={"/"}>
-              <div>Home</div>
-            </Link>
-
-            <Link href={"/property"}>
-              <div>Properties</div>
-            </Link>
-
-            <Link href={"/agent"}>
-              <div>Agents</div>
-            </Link>
-
-            <Link href={"/community?articleCategory=FREE"}>
-              <div>Community</div>
-            </Link>
-
-            <Link href={"/cs"}>
-              <div>CS</div>
-            </Link>
+            <Link href={"/"}><div>Home</div></Link>
+            <Link href={"/property"}><div>Properties</div></Link>
+            <Link href={"/agent"}><div>Agents</div></Link>
+            <Link href={"/community"}><div>Community</div></Link>
+            <Link href={"/cs"}><div>CS</div></Link>
           </Box>
 
           <Box component={"div"} className={"user-box"}>
@@ -54,5 +55,6 @@ const Top = () => {
     </Stack>
   );
 };
+
 
 export default Top;

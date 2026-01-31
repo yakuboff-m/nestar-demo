@@ -1,0 +1,6 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "editor.inlineSuggest.enabled": false,
+  "editor.tabCompletion": "off"
+}
